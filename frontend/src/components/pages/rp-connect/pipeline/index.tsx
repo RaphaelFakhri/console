@@ -1627,6 +1627,7 @@ function PipelinePageHeader({ page, expanded }: PageSectionProps) {
   if (config.mode !== 'view') {
     return (
       <PipelineEditHeader
+        configYaml={editorState.yamlContent}
         draftIssueCount={Object.keys(saveSession.lint.lintHints).length}
         expanded={expanded}
         form={page.form}
@@ -1637,6 +1638,7 @@ function PipelinePageHeader({ page, expanded }: PageSectionProps) {
         onEditSettings={() => setIsConfigDialogOpen(true)}
         onRequestDelete={editingDraft ? () => setIsDeleteAlertOpen(true) : undefined}
         onSave={saveSession.save.handleSave}
+        pipelineId={pipeline?.id}
         saveContext={server.saveContext}
         url={pipeline?.url}
       />
