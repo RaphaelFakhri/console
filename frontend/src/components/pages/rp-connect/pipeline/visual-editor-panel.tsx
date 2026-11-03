@@ -1338,6 +1338,7 @@ function InspectorRail({
               commitRef={isEditing ? commitRef : undefined}
               components={components}
               lintHints={overview.lintByNode.get(selected.id)}
+              nodeId={selected.id}
               onAddTopic={isEditing ? onAddTopic : undefined}
               onApply={onYamlChange}
               onClose={() => selectNode(null)}
